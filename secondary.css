@@ -1,0 +1,175 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-rendering: optimizeLegibility;
+  line-height: 32px;
+  font-size: 18px;
+}
+
+body {
+  width: 100%;
+}
+
+a {
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #F0AC00;
+}
+
+.header-background {
+  background-color: #5F6777;
+  height: 600px;
+  position: absolute;
+  width: 100%;
+}
+
+.container, .logo-container {
+  width: 1024px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  position: relative;
+}
+
+.logo-container {
+  left: 0;
+  margin: 0 auto;
+  position: fixed;
+  right: 0;
+  top: 64px;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 24px;
+}
+
+header {
+}
+
+.project-list {
+  align-self: flex-end;
+  margin: 400px 64px 0 0;
+  max-width: 512px;
+}
+
+.project-list a {
+  color: #F0AC00;
+}
+
+.label-top {
+  color: #131524;
+  margin-bottom: 32px;
+  margin-top: 64px;
+}
+
+.label-bottom {
+  color: #131524;
+  margin-bottom: 128px;
+  margin-top: 32px;
+}
+.project {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+.project-title {
+  color: #F0AC00;
+  line-height: 64px;
+  font-family: 'cutive mono', sans-serif;
+  font-size:18px;
+  text-decoration: underline;
+
+}
+
+.project-description {
+  color: #131524;
+  line-height: 32px;
+  font-family: 'cutive mono', serif;
+}
+
+.bio {
+  align-self: center;
+  margin: 0 64px;
+}
+
+.intro-greeting {
+  line-height: 24px;
+  margin-top: 64px;
+}
+.intro-bodycopy {
+  line-height: 24px;
+  margin-top: 32px;
+}
+
+.intro-bodycopy a {
+  color: #131524;
+}
+
+.intro-bodycopy p {
+  margin-bottom: 24px;
+}
+
+.separator {
+  background-color: #2D333F;
+  height: 8px;
+  margin-left: 64px;
+  margin-top: 64px;
+  width: 128px;
+}
+
+.contact-header {
+  color: #F0AC00;
+  font-family: 'cutive mono', sans-serif;
+  font-size:18px;
+  margin-left: 64px;
+  margin-top: 64px;
+  margin-bottom: 32px;
+}
+
+.social-media {
+  list-style: none;
+  margin-left: 64px;
+}
+
+.link-header a {
+  color: #131524;
+  text-decoration: underline;
+
+}
+
+.contact-bodycopy {
+  line-height: 32px;
+  margin-left: 64px;
+  margin-bottom: 24px;
+}
+
+footer {
+  background-color: #ffffff;
+  height: 128px;
+  margin-top: 128px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1152px) {
+  .container, .logo-container {
+    width: 100%;
+  }
+  .logo {
+    margin-left: 64px;
+  }
+  .project-list {
+    align-self: center;
+    margin: 256px 32px 0 32px;
+  }
+  .contact-content {
+    align-self: center;
+    margin-left: 0px;
+    margin-right: 32px;
+  }
+}

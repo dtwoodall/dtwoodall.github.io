@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="dog-friendly.css">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+    <link rel="icon" type="favicon" href="favicon.ico">
+    <title>maggie yue</title>
+  </head>
+
+  <body>
+    <div class="overlay">
+      <div id="map"></div>
+      <div class="address-form">
+        <div class="address-field">
+          <input id="address-input" placeholder="Add your dog friendly recommendation" />
+        </div>
+        <button id="submit-button" class="disabled">submit</button>
+      </div>
+    </div>
+
+    <script>
+      function initMap() {
+        var map, places, selectedPlace;
+        var markers = [];
+        var autocomplete;
+
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 37.7, lng: -121.5},
+          zoom: 9,
+          mapTypeControl: false,
+          panControl: false,
+          zoomControl: false,
+          streetViewControl: false,
+          fullscreenControl: false,
+        });
+
+        var addressInput = document.querySelector('#address-input');
+        var submitButton = document.querySelector('#submit-button');
+
+        function onInputChanged() {
+          selectedPlace = null;
+          submitButton.classList.add('disabled');
+        }
+
+        function onPlaceChanged() {
+          const place = autocomplete.getPlace();
+          if (place.geometry && place.geometry.location) {
+            map.setCenter(place.geometry.location);
+            map.setZoom(17);
+          }
+          if (
+            place.address_components
+            && place.address_components.some(function(address_component) {
+              return address_component.types.includes('street_number');
+            })
+          ) {
+            selectedPlace = place;
+            submitButton.classList.remove('disabled');
+          }
+        }
+
+        function onSubmitClicked() {
+          if (selectedPlace) {
+            console.log(selectedPlace);
+          }
+        }
+
+        addressInput.addEventListener('keydown', onInputChanged);
+        submitButton.addEventListener('click', onSubmitClicked);
+        autocomplete = new google.maps.places.Autocomplete(addressInput);
+        autocomplete.addListener('place_changed', onPlaceChanged);
+      }
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1zbZFGyC3DDDCGgkl3gffvbmxwNjzUuo&libraries=places&callback=initMap"
+      async defer
+    ></script>
+  </body>
+
+
+
+</html>
