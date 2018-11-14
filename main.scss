@@ -1,6 +1,6 @@
 $white: #FFFFFF;
 $black:#131524;
-$grey-1: #5F6777;
+$grey-1: #7F8797;
 $grey-2: #2D333F;
 $orange: #F0AC00;
 
@@ -151,8 +151,14 @@ footer {
   }
 }
 
-#rory-images-mobile {
-  display: none;
+.photo {
+  #rory-images-mobile {
+    display: none;
+  }
+  .maggie {
+    width: 500px;
+    height: 375px;
+  }
 }
 
 .separator {
@@ -185,6 +191,10 @@ footer {
   }
   .header-background {
     height: 940px;
+
+    .header-container {
+      width: 100%;
+    }
   }
   .logo {
     margin-left: 32px;
@@ -192,10 +202,17 @@ footer {
   #rory-images-desktop {
     display: none;
   }
-  #rory-images-mobile {
-    display: block;
-    margin-bottom: -18px;
-    margin-left: 32px;
+  .photo {
+    #rory-images-mobile {
+      display: block;
+      margin-bottom: -18px;
+      margin-left: 32px;
+    }
+
+    .maggie {
+      height: auto;
+      width: 100%;
+    }
   }
   .sub-container {
     align-self: center;

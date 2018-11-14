@@ -9,7 +9,7 @@ a {
 }
 a:hover {
   background-color: #2D333F;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 .bio {
@@ -19,8 +19,8 @@ a:hover {
 }
 
 body {
-  font-size: 18px;
   font-family: "cutive mono", sans-serif;
+  font-size: 18px;
   line-height: 32px;
   text-rendering: optimizeLegibility;
   width: 100%;
@@ -35,7 +35,7 @@ body {
 }
 .contact a:hover {
   background-color: #2D333F;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 .contact a.plain-link {
   color: #131524;
@@ -43,7 +43,7 @@ body {
 }
 .contact a.plain-link:hover {
   background-color: #2D333F;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 .contact li {
   list-style: none;
@@ -79,7 +79,7 @@ footer {
 }
 
 .header-background {
-  background-color: #5F6777;
+  background-color: #7F8797;
   height: 800px;
   position: absolute;
   width: 100%;
@@ -115,7 +115,7 @@ footer {
 }
 
 .logo {
-  color: #ffffff;
+  color: #FFFFFF;
   font-size: 24px;
 }
 
@@ -136,11 +136,15 @@ footer {
 }
 .project-title a:hover {
   background-color: #2D333F;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
-#rory-images-mobile {
+.photo #rory-images-mobile {
   display: none;
+}
+.photo .maggie {
+  width: 500px;
+  height: 375px;
 }
 
 .separator {
@@ -177,6 +181,9 @@ footer {
   .header-background {
     height: 940px;
   }
+  .header-background .header-container {
+    width: 100%;
+  }
 
   .logo {
     margin-left: 32px;
@@ -186,10 +193,14 @@ footer {
     display: none;
   }
 
-  #rory-images-mobile {
+  .photo #rory-images-mobile {
     display: block;
     margin-bottom: -18px;
     margin-left: 32px;
+  }
+  .photo .maggie {
+    height: auto;
+    width: 100%;
   }
 
   .sub-container {
