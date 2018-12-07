@@ -4,9 +4,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="dog-friendly.css">
+    <link rel="stylesheet" type="text/css" href="barkyard.css">
     <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
     <link rel="icon" type="favicon" href="favicon.ico">
+    <script src="./airtable.js"></script>
     <title>maggie yue</title>
   </head>
 
@@ -22,6 +23,9 @@
     </div>
 
     <script>
+      var Airtable = require('airtable');
+      var base = new Airtable({apiKey: 'keypnJiGGuzfFaGun'}).base('appjonhBO2TDuWIVu');
+
       function initMap() {
         var map, places, selectedPlace;
         var markers = [];
@@ -64,7 +68,12 @@
 
         function onSubmitClicked() {
           if (selectedPlace) {
-            console.log(selectedPlace);
+            base('Dog Friendly Locations').create({
+              "Name": selectedPlace.formatted_address,
+            }, function(err, record) {
+                if (err) { console.error(err); return; }
+                console.log(record);
+            });
           }
         }
 
